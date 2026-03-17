@@ -12,6 +12,11 @@ import java.util.Stack;
  * While processing each day, pop smaller or equal prices because they are part of the current
  * span. After popping, the nearest greater price left on the stack tells us where the span stops.
  *
+ * <p>Time complexity is O(n) because each index is pushed onto the stack once and popped at most
+ * once, so the total number of stack operations grows linearly with the number of prices. This
+ * makes the stack approach efficient because it avoids rechecking earlier days repeatedly, unlike
+ * a naive nested-loop solution that can take O(n^2) time.
+ *
  * <p>Example: for prices [100, 80, 60, 70, 60, 75, 85], the spans are
  * [1, 1, 1, 2, 1, 4, 6].
  */
